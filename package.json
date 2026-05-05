@@ -1,0 +1,23 @@
+{
+  "name": "sumit-labs-portfolio",
+  "version": "2.0.0",
+  "description": "Sumit Sharma — Cybersecurity Portfolio with Admin Panel & Backend",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "node api/server.js",
+    "dev": "node api/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Sumit Sharma",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "uuid": "^10.0.0"
+  }
+}

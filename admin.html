@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUMIT-LABS // Admin Nexus</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div id="toast-container"></div>
+<div class="modal-overlay" id="modal-overlay"><div class="modal"><div class="modal-header"><span class="modal-title" id="modal-title">MODAL</span><button class="modal-close" onclick="closeModal()">✕</button></div><div class="modal-body" id="modal-body"></div><div class="modal-footer" id="modal-footer"></div></div></div>
+
+<div id="app">
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-logo">⬡ SUMIT-LABS</div><div class="topbar-divider"></div><div class="topbar-tag">ADMIN NEXUS v2.0</div>
+  <div class="topbar-right"><div class="status-dot"></div><div class="topbar-time" id="topbar-clock">--:--:--</div><div class="topbar-divider"></div>
+  <button class="topbar-btn" onclick="showSection('notifications')">🔔 ALERTS</button>
+  <button class="topbar-btn danger" onclick="doLogout()">⏻ LOGOUT</button></div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-label">MAIN</div>
+  <div class="nav-item active" onclick="showSection('dashboard')"><span class="nav-icon">⬡</span> Dashboard</div>
+  <div class="nav-item" onclick="showSection('messages')"><span class="nav-icon">✉</span> Messages <span class="nav-badge" id="msg-badge">0</span></div>
+  <div class="nav-item" onclick="showSection('visitors')"><span class="nav-icon">👁</span> Visitors</div>
+  <div class="nav-item" onclick="showSection('notifications')"><span class="nav-icon">🔔</span> Alerts</div>
+  <div class="sidebar-label">CONTENT</div>
+  <div class="nav-item" onclick="showSection('editor')"><span class="nav-icon">✏</span> Editor</div>
+  <div class="nav-item" onclick="showSection('projects')"><span class="nav-icon">🗂</span> Projects</div>
+  <div class="sidebar-label">SYSTEM</div>
+  <div class="nav-item" onclick="showSection('security')"><span class="nav-icon">🛡</span> Security</div>
+  <div class="nav-item" onclick="showSection('settings')"><span class="nav-icon">⚙</span> Settings</div>
+  <div class="nav-item" onclick="showSection('activitylog')"><span class="nav-icon">📋</span> Activity</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<!-- DASHBOARD -->
+<div class="section active" id="section-dashboard">
+<div class="page-title">COMMAND DASHBOARD</div><div class="page-sub">SYSTEM OVERVIEW // REAL-TIME</div>
+<div class="grid g4 mb-24">
+  <div class="stat-card fade-in"><span class="s-icon">👁</span><div class="s-val" id="stat-visitors">--</div><div class="s-label">TOTAL VISITORS</div><div class="stat-bar"><div class="stat-bar-fill" style="width:72%"></div></div></div>
+  <div class="stat-card fade-in"><span class="s-icon">📅</span><div class="s-val" id="stat-today">--</div><div class="s-label">TODAY</div><div class="stat-bar"><div class="stat-bar-fill" style="width:45%"></div></div></div>
+  <div class="stat-card fade-in"><span class="s-icon">✉</span><div class="s-val" id="stat-messages">--</div><div class="s-label">UNREAD MSGS</div><div class="stat-bar"><div class="stat-bar-fill" style="width:30%;background:linear-gradient(90deg,#0c6,var(--green))"></div></div></div>
+  <div class="stat-card fade-in"><span class="s-icon">🌍</span><div class="s-val" id="stat-countries">--</div><div class="s-label">COUNTRIES</div><div class="stat-bar"><div class="stat-bar-fill" style="width:55%;background:linear-gradient(90deg,#a050ff,var(--purple))"></div></div></div>
+</div>
+<div class="grid g3 mb-24">
+  <div class="panel span2"><div class="panel-title">WEEKLY TRAFFIC</div><div class="bar-chart" id="weekly-chart" style="height:80px"></div>
+    <div style="display:flex;justify-content:space-between;margin-top:6px"><span style="font-family:var(--font-mono);font-size:.45rem;color:var(--text3)">MON</span><span style="font-family:var(--font-mono);font-size:.45rem;color:var(--text3)">TUE</span><span style="font-family:var(--font-mono);font-size:.45rem;color:var(--text3)">WED</span><span style="font-family:var(--font-mono);font-size:.45rem;color:var(--text3)">THU</span><span style="font-family:var(--font-mono);font-size:.45rem;color:var(--text3)">FRI</span><span style="font-family:var(--font-mono);font-size:.45rem;color:var(--text3)">SAT</span><span style="font-family:var(--font-mono);font-size:.45rem;color:var(--text3)">SUN</span></div></div>
+  <div class="panel"><div class="panel-title">RECENT ACTIVITY</div><div id="activity-feed"></div></div>
+</div>
+<div class="panel mb-24"><div class="panel-title">QUICK ACTIONS</div>
+  <div class="quick-actions">
+    <div class="qa-btn" onclick="openSite()"><div class="qa-icon">🌐</div><div class="qa-label">VIEW SITE</div></div>
+    <div class="qa-btn" onclick="showSection('messages')"><div class="qa-icon">📨</div><div class="qa-label">MESSAGES</div></div>
+    <div class="qa-btn" onclick="showSection('editor')"><div class="qa-icon">✏</div><div class="qa-label">EDITOR</div></div>
+    <div class="qa-btn" onclick="showSection('security')"><div class="qa-icon">🛡</div><div class="qa-label">SECURITY</div></div>
+    <div class="qa-btn" onclick="exportData()"><div class="qa-icon">📤</div><div class="qa-label">EXPORT</div></div>
+    <div class="qa-btn" onclick="showSection('projects')"><div class="qa-icon">🗂</div><div class="qa-label">PROJECTS</div></div>
+  </div>
+</div>
+</div>
+
+<!-- MESSAGES -->
+<div class="section" id="section-messages">
+<div class="page-title">MESSAGES</div><div class="page-sub">INBOX // CONTACT SUBMISSIONS</div>
+<div class="search-bar"><input class="search-input" placeholder="SEARCH..." id="msg-search" oninput="filterMessages()">
+  <button class="btn btn-primary btn-sm" onclick="loadMessages()">↺ REFRESH</button>
+  <button class="btn btn-danger btn-sm" onclick="clearMessages()">🗑 CLEAR</button></div>
+<div class="panel"><div class="panel-title">ALL MESSAGES</div><div style="overflow-x:auto"><table class="data-table"><thead><tr><th>STATUS</th><th>DATE</th><th>NAME</th><th>EMAIL</th><th>MESSAGE</th><th>IP</th><th>ACTIONS</th></tr></thead><tbody id="messages-table"><tr><td colspan="7" class="empty-row">LOADING...</td></tr></tbody></table></div></div>
+</div>
+
+<!-- VISITORS -->
+<div class="section" id="section-visitors">
+<div class="page-title">VISITORS</div><div class="page-sub">TRAFFIC LOG // IP INTELLIGENCE</div>
+<div class="search-bar"><input class="search-input" placeholder="FILTER..." id="vis-search" oninput="filterVisitors()">
+  <button class="btn btn-primary btn-sm" onclick="loadVisitors()">↺ REFRESH</button>
+  <button class="btn btn-danger btn-sm" onclick="clearVisitors()">🗑 CLEAR</button></div>
+<div class="panel"><div class="panel-title">VISITOR LOG (LAST 100)</div><div style="overflow-x:auto"><table class="data-table"><thead><tr><th>DATE</th><th>IP</th><th>PAGE</th><th>REFERRER</th><th>BROWSER</th><th>ACTION</th></tr></thead><tbody id="visitors-table"><tr><td colspan="6" class="empty-row">LOADING...</td></tr></tbody></table></div></div>
+</div>
+
+<!-- NOTIFICATIONS -->
+<div class="section" id="section-notifications">
+<div class="page-title">ALERTS</div><div class="page-sub">SYSTEM EVENTS</div>
+<div class="flex-between mb-16"><div style="display:flex;gap:6px"><button class="btn btn-primary btn-sm" onclick="addTestNotif()">+ TEST</button><button class="btn btn-danger btn-sm" onclick="clearNotifications()">🗑 CLEAR</button></div></div>
+<div id="notifications-list"></div>
+</div>
+
+<!-- EDITOR -->
+<div class="section" id="section-editor">
+<div class="page-title">SITE EDITOR</div><div class="page-sub">CONTENT MANAGEMENT</div>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('skills')">SKILLS</button>
+  <button class="tab-btn" onclick="switchTab('experience')">EXPERIENCE</button>
+</div>
+<div class="tab-content active" id="tab-skills">
+  <div class="panel mb-16"><div class="panel-title">ADD SKILL</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+      <div class="form-group"><label class="form-label">SKILL NAME</label><input class="form-control" id="e-skill-name" placeholder="e.g. React"></div>
+      <div class="form-group"><label class="form-label">PROFICIENCY %</label><input class="form-control" type="number" id="e-skill-pct" placeholder="85" min="1" max="100"></div>
+      <div class="form-group"><label class="form-label">CATEGORY</label><select class="form-control" id="e-skill-cat"><option>Security</option><option>Infrastructure</option><option>Cloud</option><option>Research</option><option>Other</option></select></div>
+    </div><button class="btn btn-success" onclick="addSkill()">+ ADD SKILL</button></div>
+  <div class="panel"><div class="panel-title">SKILLS LIST</div><div id="skills-list"></div></div>
+</div>
+<div class="tab-content" id="tab-experience">
+  <div class="panel mb-16"><div class="panel-title">ADD EXPERIENCE</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="form-group"><label class="form-label">COMPANY</label><input class="form-control" id="e-exp-company"></div>
+      <div class="form-group"><label class="form-label">ROLE</label><input class="form-control" id="e-exp-role"></div>
+      <div class="form-group"><label class="form-label">DATE RANGE</label><input class="form-control" id="e-exp-date" placeholder="2025 – Present"></div>
+      <div class="form-group"><label class="form-label">LOCATION</label><input class="form-control" id="e-exp-loc"></div>
+    </div>
+    <div class="form-group"><label class="form-label">DESCRIPTION</label><textarea class="form-control" id="e-exp-desc" rows="3"></textarea></div>
+    <button class="btn btn-success" onclick="addExperience()">+ ADD</button></div>
+  <div class="panel"><div class="panel-title">EXPERIENCE ENTRIES</div><div id="exp-list"></div></div>
+</div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="section-projects">
+<div class="page-title">PROJECTS</div><div class="page-sub">MANAGE PORTFOLIO PROJECTS</div>
+<div class="flex-between mb-16"><button class="btn btn-primary" onclick="openAddProject()">+ NEW PROJECT</button></div>
+<div id="projects-grid" class="grid g3"></div>
+</div>
+
+<!-- SECURITY -->
+<div class="section" id="section-security">
+<div class="page-title">SECURITY</div><div class="page-sub">ACCESS CONTROL // THREAT MONITORING</div>
+<div class="grid g4 mb-24">
+  <div class="stat-card"><span class="s-icon">🛡</span><div class="s-val" id="sec-blocked">0</div><div class="s-label">BLOCKED IPs</div></div>
+  <div class="stat-card"><span class="s-icon">✓</span><div class="s-val">SSL</div><div class="s-label">HTTPS</div></div>
+  <div class="stat-card"><span class="s-icon">🔒</span><div class="s-val">JWT</div><div class="s-label">AUTH</div></div>
+  <div class="stat-card"><span class="s-icon">⚡</span><div class="s-val">ACTIVE</div><div class="s-label">SESSION</div></div>
+</div>
+<div class="panel mb-24"><div class="panel-title">BLOCK IP</div>
+  <div class="search-bar" style="margin-bottom:10px"><input class="search-input" id="block-ip-input" placeholder="ENTER IP TO BLOCK..."><button class="btn btn-danger btn-sm" onclick="blockIPManual()">BLOCK</button></div>
+  <div id="blocked-ips-list"></div>
+</div>
+</div>
+
+<!-- SETTINGS -->
+<div class="section" id="section-settings">
+<div class="page-title">SETTINGS</div><div class="page-sub">ADMIN CONFIGURATION</div>
+<div class="grid g2 mb-24">
+  <div class="panel"><div class="panel-title">CHANGE PASSWORD</div>
+    <div class="alert alert-warn mb-16">⚠ CHANGE YOUR PASSWORD REGULARLY</div>
+    <div class="form-group"><label class="form-label">CURRENT PASSWORD</label><input type="password" class="form-control" id="curr-pwd"></div>
+    <div class="form-group"><label class="form-label">NEW PASSWORD</label><input type="password" class="form-control" id="new-pwd" placeholder="Min 6 chars"></div>
+    <div class="form-group"><label class="form-label">CONFIRM</label><input type="password" class="form-control" id="confirm-pwd"></div>
+    <button class="btn btn-warn btn-full" onclick="changePassword()">🔑 CHANGE PASSWORD</button></div>
+  <div class="panel"><div class="panel-title">DANGER ZONE</div>
+    <div class="alert alert-danger mb-16">⚠ IRREVERSIBLE ACTIONS</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <button class="btn btn-warn btn-full" onclick="exportData()">📤 EXPORT ALL DATA</button>
+      <button class="btn btn-danger btn-full" onclick="if(confirm('Logout?'))doLogout()">⏻ LOGOUT</button>
+    </div></div>
+</div>
+</div>
+
+<!-- ACTIVITY LOG -->
+<div class="section" id="section-activitylog">
+<div class="page-title">ACTIVITY LOG</div><div class="page-sub">AUDIT TRAIL</div>
+<div class="flex-between mb-16"><button class="btn btn-danger btn-sm" onclick="clearActivityLog()">🗑 CLEAR</button></div>
+<div class="panel"><div class="panel-title">ALL ACTIONS</div><table class="data-table"><thead><tr><th>TIMESTAMP</th><th>ACTION</th><th>DETAILS</th><th>STATUS</th></tr></thead><tbody id="activity-log-table"><tr><td colspan="4" class="empty-row">LOADING...</td></tr></tbody></table></div>
+</div>
+
+</div><!-- /main -->
+</div><!-- /app -->
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+{
+  "admin": {
+    "username": "admin",
+    "passwordHash": "$2a$10$YLUFDGFy9EJPRc5SS5teku/SwAdXqb1wuLWTbZd5Ym/syRR8W8bnG"
+  },
+  "messages": [
+    {
+      "id": "f04506dc-0a4e-4288-b52e-c7e6e53d2485",
+      "name": "sumit sharma",
+      "email": "sumitsharmark92@gmail.com",
+      "phone": "+919027051135",
+      "message": "hi",
+      "ip": "::1",
+      "timestamp": "2026-05-05T12:25:45.756Z",
+      "read": true
+    }
+  ],
+  "visitors": [
+    {
+      "id": "dc89cac7-0e29-4093-a0ed-4fcc89abc8df",
+      "ip": "::1",
+      "page": "/",
+      "referrer": "Direct",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "timestamp": "2026-05-05T12:25:35.367Z",
+      "country": "Unknown"
+    },
+    {
+      "id": "47179437-5ecf-4123-b64c-14ff9143014f",
+      "ip": "::1",
+      "page": "/",
+      "referrer": "Direct",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "timestamp": "2026-05-05T12:24:57.546Z",
+      "country": "Unknown"
+    },
+    {
+      "id": "68a2a58b-c309-489d-92f6-8acf697c20a6",
+      "ip": "::1",
+      "page": "/",
+      "referrer": "Direct",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "timestamp": "2026-05-05T12:12:32.642Z",
+      "country": "Unknown"
+    },
+    {
+      "id": "c68db369-7067-4239-992a-978c6f904a2c",
+      "ip": "::1",
+      "page": "/",
+      "referrer": "Direct",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "timestamp": "2026-05-05T12:08:37.081Z",
+      "country": "Unknown"
+    },
+    {
+      "id": "07dc2eb4-8c35-4c4e-9e0e-2ef8fb245ae7",
+      "ip": "::1",
+      "page": "/",
+      "referrer": "Direct",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "timestamp": "2026-05-05T12:01:00.956Z",
+      "country": "Unknown"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "name": "CYBER-OPS PORTFOLIO",
+      "desc": "Personal cybersecurity portfolio website built as a full cyber command center interface. Features 3D globe threat visualization, interactive hacker terminal, AI assistant, and live activity feeds.",
+      "status": "LIVE",
+      "tags": [
+        "HTML/CSS/JS",
+        "Three.js",
+        "D3.js",
+        "GSAP"
+      ],
+      "live": "https://sumitsharmark92.github.io/",
+      "github": "https://github.com/sumitsharmark92",
+      "createdAt": 1714500000000
+    },
+    {
+      "id": "p2",
+      "name": "NETWORK SECURITY TOOLKIT",
+      "desc": "Collection of security analysis scripts and tools developed during penetration testing training. Includes port scanners, vulnerability assessors, and network mapping utilities.",
+      "status": "LIVE",
+      "tags": [
+        "Python",
+        "Bash",
+        "Kali Linux",
+        "Nmap"
+      ],
+      "live": "",
+      "github": "https://github.com/sumitsharmark92",
+      "createdAt": 1714500000001
+    },
+    {
+      "id": "p3",
+      "name": "AZURE SECURITY IMPLEMENTATION",
+      "desc": "Practical implementation of Azure Blob Storage and Azure Files security hardening. Covers encryption at rest, RBAC policies, SAS tokens, and secure storage architecture.",
+      "status": "LIVE",
+      "tags": [
+        "Microsoft Azure",
+        "Power Apps",
+        "Cloud Security"
+      ],
+      "live": "https://learn.microsoft.com/api/credentials/share/en-us/sumitsharma-7741/17DFE2349D981EA7?sharingId=94C07DED78C82462",
+      "github": "",
+      "createdAt": 1714500000002
+    },
+    {
+      "id": "p4",
+      "name": "ANONYMITY & OPSEC RESEARCH",
+      "desc": "Research project on dark web anonymity tools, cryptocurrency tracing for cybersecurity, and operational security practices. Completed through EC-Council CodeRed certification program.",
+      "status": "LIVE",
+      "tags": [
+        "Tor",
+        "Cryptocurrency",
+        "OPSEC",
+        "EC-Council"
+      ],
+      "live": "https://learn.eccouncil.org/certificate/731a7d75-f885-4bdb-9a56-254119f919f8?logged=true",
+      "github": "",
+      "createdAt": 1714500000003
+    }
+  ],
+  "skills": [
+    {
+      "id": "s1",
+      "name": "Penetration Testing",
+      "pct": 82,
+      "category": "Security"
+    },
+    {
+      "id": "s2",
+      "name": "Network Security",
+      "pct": 78,
+      "category": "Security"
+    },
+    {
+      "id": "s3",
+      "name": "SOC Analysis",
+      "pct": 80,
+      "category": "Security"
+    },
+    {
+      "id": "s4",
+      "name": "Incident Response",
+      "pct": 75,
+      "category": "Security"
+    },
+    {
+      "id": "s5",
+      "name": "IT Administration",
+      "pct": 90,
+      "category": "Infrastructure"
+    },
+    {
+      "id": "s6",
+      "name": "Dark Web / OPSEC",
+      "pct": 70,
+      "category": "Research"
+    },
+    {
+      "id": "s7",
+      "name": "Ethical Hacking (CEH)",
+      "pct": 68,
+      "category": "Security"
+    },
+    {
+      "id": "s8",
+      "name": "Azure Cloud Security",
+      "pct": 65,
+      "category": "Cloud"
+    },
+    {
+      "id": "s9",
+      "name": "Linux / Kali",
+      "pct": 75,
+      "category": "Infrastructure"
+    }
+  ],
+  "experience": [
+    {
+      "id": "e1",
+      "company": "Govardhan Institute for Vedic Education (GIVE)",
+      "role": "IT Administrator",
+      "date": "2025 – Present",
+      "location": "Vrindavan, India",
+      "desc": "Managed end-to-end IT infrastructure for 100+ users. Implemented security controls, endpoint protection, data backup routines. Provided Tier-1/2 technical support. Performed regular system updates, software deployments, and hardware troubleshooting."
+    }
+  ],
+  "blockedIPs": [],
+  "activityLog": [
+    {
+      "id": "6bea353a-821d-4fa0-94b6-7c823bbaebc0",
+      "action": "MESSAGE",
+      "details": "Updated message from sumit sharma",
+      "status": "INFO",
+      "time": 1777983955897
+    },
+    {
+      "id": "7515ad13-f967-42d0-9169-b8b204d2b719",
+      "action": "LOGIN",
+      "details": "Admin authenticated successfully",
+      "status": "SUCCESS",
+      "time": 1777983946305
+    },
+    {
+      "id": "cc2eb460-c146-4845-8cab-0e3cd053c6d8",
+      "action": "MESSAGE",
+      "details": "New contact from sumit sharma (sumitsharmark92@gmail.com)",
+      "status": "SUCCESS",
+      "time": 1777983945758
+    },
+    {
+      "id": "3b8e7624-ce3b-4ad9-8817-9242071ca0d6",
+      "action": "LOGIN",
+      "details": "Admin authenticated successfully",
+      "status": "SUCCESS",
+      "time": 1777983917810
+    },
+    {
+      "id": "e9823cc3-bbca-4c41-9194-7d9703fbcca6",
+      "action": "LOGIN",
+      "details": "Admin authenticated successfully",
+      "status": "SUCCESS",
+      "time": 1777983515412
+    },
+    {
+      "id": "ae8ba245-4efc-4868-8c3e-62ade9c3db76",
+      "action": "LOGIN",
+      "details": "Admin authenticated successfully",
+      "status": "SUCCESS",
+      "time": 1777983392687
+    },
+    {
+      "id": "820ceea7-cc0c-4014-ad60-c17779af2e9b",
+      "action": "LOGIN",
+      "details": "Admin authenticated successfully",
+      "status": "SUCCESS",
+      "time": 1777982874567
+    },
+    {
+      "id": "3430f9d1-c2f1-4dac-ad7a-dbdbec4f3265",
+      "action": "FAILED LOGIN",
+      "details": "Failed login attempt from ::1",
+      "status": "DANGER",
+      "time": 1777982779322
+    },
+    {
+      "id": "94e76e69-175c-48c3-a145-748680979d59",
+      "action": "FAILED LOGIN",
+      "details": "Failed login attempt from ::1",
+      "status": "DANGER",
+      "time": 1777982761270
+    },
+    {
+      "id": "3c951fff-499f-4a91-8b1e-e32946c6e765",
+      "action": "FAILED LOGIN",
+      "details": "Failed login attempt from ::1",
+      "status": "DANGER",
+      "time": 1777982737718
+    },
+    {
+      "id": "6f891477-8adb-4252-83ae-69871e3c50bc",
+      "action": "FAILED LOGIN",
+      "details": "Failed login attempt from ::1",
+      "status": "DANGER",
+      "time": 1777982539276
+    }
+  ],
+  "notifications": [],
+  "settings": {
+    "siteName": "Sumit Sharma",
+    "siteTagline": "Cybersecurity Portfolio",
+    "quickNote": ""
+  },
+  "editor": {
+    "name": "SUMIT SHARMA",
+    "tagline": "CYBERSECURITY PORTFOLIO // v2.0",
+    "description": "Junior Security Analyst & Blue Team specialist focused on penetration testing, SOC operations, and incident response.",
+    "cta": "INITIATE CONTACT",
+    "email": "calista.natsu@hotmail.com",
+    "phone": "+91 9027051135",
+    "location": "Vrindavan, Uttar Pradesh, India",
+    "github": "https://github.com/sumitsharmark92",
+    "linkedin": "",
+    "twitter": "",
+    "instagram": "",
+    "website": "https://sumitsharmark92.github.io/"
+  }
+}
