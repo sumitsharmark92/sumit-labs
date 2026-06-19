@@ -1,6 +1,0 @@
-node_modules/
-node-installer.msi
-git-installer.exe
-*.msi
-*.exe
-.env
