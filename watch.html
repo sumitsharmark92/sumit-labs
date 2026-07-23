@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>watch.party — Watch Together | sumit.sh</title>
+  <meta name="description" content="Spin up a room, drop a YouTube video, and watch it in sync with your friends — with live chat on the side. No login required.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <canvas id="matrix-rain"></canvas>
+  <div class="scanlines"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <main class="app-page">
+    <a href="index.html" class="back-link">← back to portfolio</a>
+
+    <h1 class="app-title reveal">watch.party<span class="cursor"></span></h1>
+    <p class="app-desc reveal">
+      Spin up a room, drop a YouTube video, and watch it in sync with your
+      friends — with live chat on the side. No login required.
+    </p>
+
+    <!-- Create / Join Cards -->
+    <div class="app-cards" id="watchLobby">
+      <div class="app-card reveal">
+        <div class="app-card-title">$ new-party</div>
+        <p class="app-card-desc">Create a fresh room and get a shareable link.</p>
+        <button class="btn btn-primary" id="createWatchBtn" style="width:100%;">start a watch party →</button>
+      </div>
+
+      <div class="app-card reveal">
+        <div class="app-card-title">$ join-party</div>
+        <p class="app-card-desc">Got a code? Hop in.</p>
+        <input type="text" class="app-input" id="joinWatchCode" placeholder="party code (e.g. w4k9p2)">
+        <button class="btn btn-cyan-outline" id="joinWatchBtn" style="width:100%;">join →</button>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="how-it-works reveal" id="watchHowItWorks">
+      <div class="how-title">how it works:</div>
+      <ol class="how-list">
+        <li>Create a party and copy the link.</li>
+        <li>Send it to anyone — they open it in a browser.</li>
+        <li>Paste a YouTube URL. Play/pause/seek syncs across all devices, and chat runs live.</li>
+        <li>Everyone watches the same frame at the same time — zero delay.</li>
+      </ol>
+    </div>
+
+    <!-- Room (hidden until created/joined) -->
+    <div class="room-container" id="watchRoom">
+      <!-- Connection Banner -->
+      <div class="connection-banner" id="watchConnectionBanner">connecting to sync server...</div>
+
+      <div class="room-header">
+        <h2 style="font-size:1.4rem;color:var(--green);font-weight:700;">🎬 watch.party room</h2>
+        <div class="room-code" id="watchRoomCode" title="Click to copy">
+          <span>room:</span>
+          <span id="watchCodeDisplay">------</span>
+          <span style="font-size:0.7rem;opacity:0.6;">📋</span>
+        </div>
+      </div>
+
+      <!-- Sync Quality Indicator -->
+      <div class="sync-panel" id="watchSyncPanel">
+        <div class="sync-indicator">
+          <div class="sync-dot" id="watchSyncDot"></div>
+          <span class="sync-label" id="watchSyncLabel">connecting...</span>
+        </div>
+        <span class="sync-rtt" id="watchSyncRtt"></span>
+      </div>
+
+      <!-- URL Input -->
+      <div class="url-input-group">
+        <input type="text" class="app-input" id="watchUrlInput" placeholder="paste a YouTube URL...">
+        <button class="btn btn-primary" id="watchLoadUrl">load video</button>
+      </div>
+
+      <!-- Watch Layout: Player + Chat -->
+      <div class="watch-layout">
+        <!-- Player -->
+        <div>
+          <div class="player-area">
+            <div class="player-placeholder" id="watchPlayerContainer">
+              <div id="watchPlayer">drop a YouTube link to start watching</div>
+            </div>
+            <div class="player-controls">
+              <button class="control-btn" id="watchPlayPause">▶ play</button>
+              <button class="control-btn" id="watchTheater">🖥 theater</button>
+              <span style="flex:1;"></span>
+              <span style="font-size:0.78rem;color:var(--text-muted);" id="watchNowPlaying">no video loaded</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat -->
+        <div class="chat-panel" id="chatPanel">
+          <div class="chat-header">💬 live chat</div>
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg system-msg">
+              <span class="chat-text">waiting for guests...</span>
+            </div>
+          </div>
+          <div class="chat-input-group">
+            <input type="text" id="chatInput" placeholder="type a message..." autocomplete="off">
+            <button id="chatSend">send</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-outline" id="watchLeave" style="margin-top:1.5rem;">leave room</button>
+    </div>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+  <script src="sync.js"></script>
+  <script src="watch.js"></script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumit Sharma — Cybersecurity Portfolio | sumit.sh</title>
+  <meta name="description" content="B.Tech Cybersecurity student specializing in SOC operations, penetration testing, and cloud security. Portfolio of Sumit Sharma — securing infrastructure and building security tools.">
+  <meta name="author" content="Sumit Sharma">
+  <meta name="keywords" content="cybersecurity, portfolio, SOC, penetration testing, cloud security, B.Tech, Sumit Sharma">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sumit Sharma — Cybersecurity Portfolio">
+  <meta property="og:description" content="B.Tech Cybersecurity student · SOC operations, penetration testing, and cloud security.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sumit.sh">
+
+  <!-- Favicon (terminal icon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <canvas id="matrix-rain"></canvas>
+  <div class="scanlines"></div>
+  <canvas id="particle-canvas"></canvas>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">[ sumit.sh ]</a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about">./about</a>
+      <a href="#skills">./skills</a>
+      <a href="#experience">./experience</a>
+      <a href="#projects">./projects</a>
+      <a href="#certs">./certs</a>
+      <a href="#contact">./contact</a>
+      <a href="jam.html" class="nav-highlight">./jam</a>
+      <a href="watch.html" class="nav-highlight">./watch</a>
+    </div>
+
+    <a href="#contact" class="nav-cta">init contact</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about">./about</a>
+    <a href="#skills">./skills</a>
+    <a href="#experience">./experience</a>
+    <a href="#projects">./projects</a>
+    <a href="#certs">./certs</a>
+    <a href="#contact">./contact</a>
+    <a href="jam.html" class="nav-highlight">./jam</a>
+    <a href="watch.html" class="nav-highlight">./watch</a>
+  </div>
+
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section class="section hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-left">
+            <div class="status-badge reveal">
+              <span class="dot"></span>
+              status: available for internships
+            </div>
+
+            <h1 class="hero-name reveal">
+              <span id="typedName"></span><span class="cursor"></span>
+            </h1>
+
+            <p class="hero-desc reveal">
+              B.Tech Cybersecurity student · SOC operations,
+              penetration testing, and cloud security.
+              Currently securing infrastructure for 100+ users
+              at Govardhan Institute for Vedic Education.
+            </p>
+
+            <div class="hero-buttons reveal">
+              <a href="#projects" class="btn btn-primary">view projects →</a>
+              <a href="https://github.com/sumitsharma" target="_blank" rel="noopener" class="btn btn-outline">github ↗</a>
+              <a href="https://linkedin.com/in/sumitsharma" target="_blank" rel="noopener" class="btn btn-outline">linkedin ↗</a>
+              <a href="#" class="btn btn-ghost" id="downloadResume">download resume ↓</a>
+            </div>
+          </div>
+
+          <div class="hero-right reveal-right">
+            <div class="terminal-card" id="terminalCard">
+              <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">sumit@portfolio: ~</span>
+              </div>
+              <div class="terminal-body" id="terminalBody">
+                <!-- Lines will be typed by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-label reveal">// WHOAMI</div>
+        <h2 class="section-title reveal">About me.</h2>
+
+        <div class="about-grid" style="margin-top: 2.5rem;">
+          <div class="about-text reveal-left">
+            <p>
+              I'm a <span class="highlight-text">B.Tech Cybersecurity student</span> at Sanskriti University, Mathura.
+              My focus is on <span class="highlight-text">SOC operations</span>, <span class="highlight-text">penetration testing</span>,
+              and <span class="highlight-text">cloud security</span> — specifically within Azure environments.
+            </p>
+            <p>
+              I'm currently managing and securing infrastructure for 100+ users at
+              <span class="highlight-text">Govardhan Institute for Vedic Education</span>,
+              applying real-world security practices including Active Directory management,
+              network monitoring, and incident response protocols.
+            </p>
+            <p>
+              I build security tools, automate reconnaissance workflows, and continuously
+              sharpen my skills through CTFs on TryHackMe, Hack The Box, and PortSwigger labs.
+              I believe in learning by breaking things — responsibly.
+            </p>
+          </div>
+
+          <div class="about-stats stagger-children">
+            <div class="stat-card reveal">
+              <span class="stat-number">100+</span>
+              <span class="stat-label">Users Secured</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Hackathons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-label reveal">// STACK</div>
+        <h2 class="section-title reveal">Tooling & capabilities.</h2>
+
+        <div class="skills-grid stagger-children" style="margin-top: 2.5rem;">
+          <div class="skill-category reveal">
+            <div class="skill-category-title">Security & Networking</div>
+            <div class="skill-tags">
+              <span class="skill-tag">SOC Operations</span>
+              <span class="skill-tag">Vulnerability Assessment</span>
+              <span class="skill-tag">Network Security</span>
+              <span class="skill-tag">Access Control</span>
+              <span class="skill-tag">Incident Response</span>
+              <span class="skill-tag">Active Directory</span>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <div class="skill-category-title">Tools</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">Nmap</span>
+              <span class="skill-tag">Nessus</span>
+              <span class="skill-tag">Metasploit</span>
+              <span class="skill-tag">Burp Suite</span>
+              <span class="skill-tag">Kali Linux</span>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <div class="skill-category-title">Cloud & Platforms</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Microsoft Azure</span>
+              <span class="skill-tag">RBAC</span>
+              <span class="skill-tag">Blob Storage Security</span>
+              <span class="skill-tag">Power Apps</span>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <div class="skill-category-title">Programming</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Bash</span>
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <div class="skill-category-title">Concepts</div>
+            <div class="skill-tags">
+              <span class="skill-tag">OWASP Top 10</span>
+              <span class="skill-tag">CVE/CVSS Analysis</span>
+              <span class="skill-tag">Endpoint Security</span>
+              <span class="skill-tag">LAN/WAN Admin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE SECTION ============ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-label reveal">// UPTIME</div>
+        <h2 class="section-title reveal">Experience & ops.</h2>
+
+        <div class="timeline" style="margin-top: 2.5rem;">
+          <div class="timeline-item reveal">
+            <div class="timeline-date">2024 — Present</div>
+            <div class="timeline-role">IT Infrastructure & Security Admin</div>
+            <div class="timeline-company">Govardhan Institute for Vedic Education</div>
+            <ul class="timeline-details">
+              <li>Managing and securing IT infrastructure for 100+ users across the institute</li>
+              <li>Implementing Active Directory policies, access controls, and endpoint security</li>
+              <li>Monitoring network traffic, responding to incidents, and maintaining firewall rules</li>
+              <li>Configuring Azure cloud services including Blob Storage security and RBAC</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-date">2022 — 2024</div>
+            <div class="timeline-role">Cybersecurity Self-Study & Labs</div>
+            <div class="timeline-company">TryHackMe · Hack The Box · PortSwigger</div>
+            <ul class="timeline-details">
+              <li>Completed penetration testing career paths on Cybrary and TryHackMe</li>
+              <li>Practiced web application security testing through PortSwigger labs</li>
+              <li>Built Python and Bash automation scripts for reconnaissance and scanning</li>
+              <li>Participated in CTF competitions and hackathons</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-label reveal">// PAYLOADS</div>
+        <h2 class="section-title reveal">Selected projects.</h2>
+
+        <div class="projects-grid stagger-children" style="margin-top: 2.5rem;">
+          <div class="project-card reveal" data-tilt>
+            <div class="project-header">
+              <span class="project-id">proj_01</span>
+              <span class="project-status"></span>
+            </div>
+            <h3 class="project-title">Red Team Agentic AI</h3>
+            <p class="project-desc">
+              Automation workflow chaining reconnaissance, port scanning,
+              vulnerability enumeration, and report generation via LLM-assisted orchestration.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">#python</span>
+              <span class="project-tag">#llm</span>
+              <span class="project-tag">#nmap</span>
+              <span class="project-tag">#metasploit</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-tilt>
+            <div class="project-header">
+              <span class="project-id">proj_02</span>
+              <span class="project-status"></span>
+            </div>
+            <h3 class="project-title">Cyber-Ops Interactive Portfolio</h3>
+            <p class="project-desc">
+              Cybersecurity portfolio with interactive threat visualization,
+              terminal simulation, and recruiter-accessible project demos.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">#three.js</span>
+              <span class="project-tag">#javascript</span>
+              <span class="project-tag">#github_pages</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-tilt>
+            <div class="project-header">
+              <span class="project-id">proj_03</span>
+              <span class="project-status"></span>
+            </div>
+            <h3 class="project-title">Azure Cloud Security Hardening</h3>
+            <p class="project-desc">
+              Secure Azure storage configurations using RBAC, SAS token controls,
+              encryption, and restricted network access aligned with Microsoft security practices.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">#azure</span>
+              <span class="project-tag">#rbac</span>
+              <span class="project-tag">#sas</span>
+              <span class="project-tag">#encryption</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-tilt>
+            <div class="project-header">
+              <span class="project-id">proj_04</span>
+              <span class="project-status"></span>
+            </div>
+            <h3 class="project-title">Network Security & OPSEC Toolkit</h3>
+            <p class="project-desc">
+              Python and Bash utilities for network scanning, enumeration, and
+              basic vulnerability assessment in isolated lab environments.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">#python</span>
+              <span class="project-tag">#bash</span>
+              <span class="project-tag">#lab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS & EDUCATION ============ -->
+    <section class="section" id="certs">
+      <div class="container">
+        <div class="section-label reveal">// CREDENTIALS</div>
+        <h2 class="section-title reveal">Certifications & education.</h2>
+
+        <div class="certs-grid" style="margin-top: 2.5rem;">
+          <div class="certs-column reveal-left">
+            <div class="certs-column-title">Certifications</div>
+            <div class="cert-item">EC-Council CodeRed — Dark Web, Anonymity & Cryptocurrency (2026)</div>
+            <div class="cert-item">Cybrary — Penetration Tester Career Path (2022)</div>
+            <div class="cert-item">Microsoft — Secure Storage: Azure Files & Blob Storage (2024)</div>
+            <div class="cert-item">Microsoft Applied Skills — Canvas Apps with Power Apps (2024)</div>
+            <div class="cert-item">Cybrary — Enterprise Security: Creating a World-Class SOC (2022)</div>
+          </div>
+
+          <div class="certs-column reveal-right">
+            <div class="certs-column-title">Education</div>
+
+            <div class="edu-item">
+              <div class="edu-title">B.Tech, Computer Science & Engineering</div>
+              <div class="edu-subtitle">Sanskriti University, Mathura · Expected 2026</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-title">CBSE Class XII</div>
+              <div class="edu-subtitle">78%</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-title">ICSE Class X</div>
+              <div class="edu-subtitle">80%</div>
+            </div>
+
+            <div class="hackathon-section">
+              <div class="hackathon-title">Hackathons & Platforms</div>
+              <div class="hackathon-tags">
+                <span class="skill-tag">Kill Switch Hackathon 2026</span>
+                <span class="skill-tag">SPARK Hack 2026</span>
+                <span class="skill-tag">TryHackMe</span>
+                <span class="skill-tag">PortSwigger</span>
+                <span class="skill-tag">Hack The Box</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-label reveal">// HANDSHAKE</div>
+        <h2 class="section-title reveal">Let's connect.</h2>
+
+        <div class="contact-box reveal-scale">
+          <p class="contact-text">
+            Open to SOC, blue team, pentesting, and cloud security internships.<br>
+            Reach out — I reply fast.
+          </p>
+
+          <a href="mailto:sumitsharmark92@gmail.com" class="contact-email">
+            sumitsharmark92@gmail.com
+          </a>
+
+          <div class="contact-actions">
+            <a href="#" class="btn btn-ghost" id="downloadResumeBottom">download resume ↓</a>
+          </div>
+
+          <div class="contact-meta">
+            <span>+91 90270 51135</span>
+            <span class="sep">·</span>
+            <a href="https://github.com/sumitsharma" target="_blank" rel="noopener">github</a>
+            <span class="sep">·</span>
+            <a href="https://linkedin.com/in/sumitsharma" target="_blank" rel="noopener">linkedin</a>
+            <span class="sep">·</span>
+            <span>Vrindavan, UP · India</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p>
+      built with <span class="heart">♥</span> by
+      <a href="#">sumit.sh</a> · 2026
+    </p>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
